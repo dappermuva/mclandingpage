@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@300&display=swap');
 
+:root {
+    --overlay-color:purple
+
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +23,13 @@
     background-color: #111;
     color: #fff;
     z-index: 2;
+    transition: 0.5s;
 }
+
+    .showcase.active {
+        right: 300px
+    }
+
 
 .showcase header{
     position: absolute;
@@ -81,7 +91,7 @@
 }
 
 .text h2 {
-    font-size: 3em;
+    font-size: 5em;
     font-weight: 700;
     line-height: 1em;
     text-transform: uppercase;
@@ -90,7 +100,7 @@
 
 }
 .text h3 {
-    font-size: 2em;
+    font-size: 4em;
     font-weight: 700;
     line-height: 1em;
     text-transform: uppercase;
@@ -119,7 +129,7 @@
 
 .text a:hover {
     letter-spacing: 6px;
-    color: purple;
+    color: var(--overlay-color);
     background-color: yellow;
 
 }
@@ -144,4 +154,51 @@
     filter: invert(1);
     margin-right: 20px;
     transform: scale(0.5);
+}
+
+.social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul {
+    position: relative;
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111
+
+}
+
+.menu ul li a:hover {
+    color: purple;
+}
+
+
+@media (max-width: 991px) {
+    .showcase
+    .showcase header {
+        padding:40px;
+    }
+}
+
+.text h2 {
+    font-size: 2em
+}
+
+.text h3 {
+    font-size: 1em;
 }
